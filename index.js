@@ -1,6 +1,7 @@
 const actions = document.getElementById("actions");
 const menuButton = document.getElementById("menu-button");
 const roundButtons = document.getElementsByClassName("round-button");
+const wrappers = document.getElementsByClassName("wrapper");
 let flag = true;
 
 function showEl(el) {
@@ -26,8 +27,8 @@ function toggleStyle() {
 
 function showToolTip(event) {
   const target = event.target;
-  if (target.className === "round-button") {
-    const toolTipSpan = target.nextElementSibling;
+  if (target.className === "round-button" && target.id !== "menu-button") {
+    const toolTipSpan = target.previousElementSibling;
     toolTipSpan.style.display = "block";
   }
 }
@@ -40,8 +41,11 @@ function hideToolTip(event) {
 }
 
 actions.setAttribute("style", "display:none");
-actions.addEventListener("mouseover", showToolTip);
 Array.from(roundButtons).forEach((button) => {
-  button.addEventListener("mouseleave", hideToolTip);
+  button.addEventListener("mouseenter", showToolTip);
+});
+// actions.addEventListener("mouseenter", showToolTip);
+Array.from(wrappers).forEach((wrapper) => {
+  wrapper.addEventListener("mouseleave", hideToolTip);
 });
 menuButton.addEventListener("click", toggleStyle);

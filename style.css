@@ -14,8 +14,7 @@ body {
   right: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 5rem;
+  align-items: flex-end;
 }
 
 #actions {
@@ -23,9 +22,9 @@ body {
   opacity: 1;
   visibility: visible;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   gap: 0.6rem;
-  /* width: 15rem; */
+  width: 15rem;
 }
 
 @keyframes fadeIn {
@@ -58,8 +57,8 @@ body {
 }
 
 #menu-button:hover {
-  width: 4rem;
-  height: 4rem;
+  width: 3.7rem;
+  height: 3.7rem;
 }
 
 .round-button {
@@ -69,11 +68,12 @@ body {
   background-color: white;
   border: 1px solid black;
   transition: width 0.2s, height 0.2s;
+  margin-left: 1rem;
 }
 
 .round-button:hover {
-  width: 3.7rem;
-  height: 3.7rem;
+  width: 3.1rem;
+  height: 3.1rem;
   background-color: black;
   color: white;
   box-shadow: grey 0rem 0.2rem 0.2rem 0.1rem;
@@ -81,14 +81,12 @@ body {
 
 .tooltip {
   display: none;
-  position: absolute;
-  padding-right: 0.5rem;
-  text-align: left;
-  right: 1rem;
-  margin-top: -2.5rem;
-  width: 10rem;
+  /* visibility: hidden; */
 }
 
 .wrapper {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
 }
